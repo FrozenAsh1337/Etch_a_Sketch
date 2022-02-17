@@ -7,9 +7,10 @@ int main()
 	keypad(stdscr,TRUE);
 	getmaxyx(stdscr,row,col);
 	row=row/2;col=col/2-1;
-	while(1)
+	while(ch!=27)
 	{
 		ch=getch();
+		if(ch=='c') clear();
 		if(ch==KEY_UP)
 		{
 			row--;
@@ -35,5 +36,6 @@ int main()
 			refresh();
 		}
 	}
+	endwin();
 	return 0;
 }
